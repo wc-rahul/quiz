@@ -1,0 +1,6 @@
+[
+  {
+    "type": "sqlite",
+    "path": "e:\\custom app\\wc-rahul-testing\\prisma\\dev.sqlite"
+  }
+]

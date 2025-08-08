@@ -1,7 +1,38 @@
 import { Page, Layout, Card, Text, BlockStack, Button, InlineStack } from "@shopify/polaris";
 import { TitleBar } from "@shopify/app-bridge-react";
+import SelectProduct from "./components/selectproduct";
+import { authenticate } from "../shopify.server";
+import { useLoaderData } from "@remix-run/react";
+
+export const loader = async ({ request }) => {
+  const { admin } = await authenticate.admin(request);
+
+const response = await admin.graphql(
+    `#graphql
+    query GetProducts {
+      products(first: 250) {
+        nodes {
+          id
+          title
+          featuredMedia{
+            preview{
+              image{
+                url
+              }
+            }
+          }
+        }
+      }
+    }`,
+  );
+
+  const data = await response.json();
+  return data;
+};
 
 export default function Quiz() {
+  const {data, extensions, headers} = useLoaderData();
+  console.log(data);
   return (
     <Page>
       <TitleBar title="Card">
@@ -16,6 +47,9 @@ export default function Quiz() {
                   Card
                 </Text>
               </BlockStack>
+              <Card gap="500">
+                <SelectProduct products={data.products.nodes}/>
+              </Card>
             </Card>
 
             <BlockStack gap="500" >

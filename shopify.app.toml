@@ -3,7 +3,7 @@
 client_id = "cc91820cec1b3764ac2263aed6667408"
 name = "wc-rahul-testing"
 handle = "wc-rahul-testing"
-application_url = "https://somewhat-attacks-day-accounts.trycloudflare.com"
+application_url = "https://wanna-inflation-scripts-halloween.trycloudflare.com"
 embedded = true
 
 [build]
@@ -27,9 +27,9 @@ scopes = "write_products"
 
 [auth]
 redirect_urls = [
-  "https://somewhat-attacks-day-accounts.trycloudflare.com/auth/callback",
-  "https://somewhat-attacks-day-accounts.trycloudflare.com/auth/shopify/callback",
-  "https://somewhat-attacks-day-accounts.trycloudflare.com/api/auth/callback"
+  "https://wanna-inflation-scripts-halloween.trycloudflare.com/auth/callback",
+  "https://wanna-inflation-scripts-halloween.trycloudflare.com/auth/shopify/callback",
+  "https://wanna-inflation-scripts-halloween.trycloudflare.com/api/auth/callback"
 ]
 
 [pos]

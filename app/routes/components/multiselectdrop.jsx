@@ -14,6 +14,7 @@ export default function MultiAutocompleteExample({propoptions, propplaceholder})
   const [selectedOptions, setSelectedOptions] = useState([]);
   const [inputValue, setInputValue] = useState('');
   const [options, setOptions] = useState(deselectedOptions);
+  console.log('options',options)
 
   const updateText = useCallback(
     (value) => {
@@ -85,6 +86,9 @@ export default function MultiAutocompleteExample({propoptions, propplaceholder})
         textField={textField}
         onSelect={setSelectedOptions}
         listTitle="Suggested Tags"
+        onLoadMoreResults={() => {console.log('end')}}
+        willLoadMoreResults={true}
+        loading={true}
       />
     </div>
   );

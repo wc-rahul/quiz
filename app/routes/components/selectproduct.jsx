@@ -2,7 +2,7 @@ import MultiSelectDrop from './multiselectdrop';
 
 export default function SelectProduct({products}) {
  const productsOptions = products.map((value) => {
-  const productHtml = <div className='productcards'>
+  const productHtml = <div className='productcards' style={{display: 'flex', alignItems: 'center', gap: 15}}>
     <img className='prodIm' src={value?.featuredMedia?.preview?.image?.url} alt={value.title} width={100} height={100} />
     <p className='productTitle'>{value.title}</p>
     <p className='productPrice'></p>
